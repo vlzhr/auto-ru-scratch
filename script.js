@@ -1,4 +1,4 @@
-var creative;
+var creative, cursor;
 var clickTag = "https://auto.ru";
 
 function redirecting() {
@@ -71,6 +71,7 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     function handlePercentage(filledInPixels) {
+        cursor.hide();
         filledInPixels = filledInPixels || 0;
         console.log(filledInPixels + '%');
         if (filledInPixels > 96) {
@@ -111,6 +112,34 @@ document.addEventListener("DOMContentLoaded", function() {
         isDrawing = false;
     }
 
+    // function CursorAction (fr, to, dur) {
+    //     this.x1 = fr[0];
+    //     this.y1 = fr[1];
+    //     this.x2 = to[0];
+    //     this.y2 = to[1];
+    //     this.duration = dur; // ms
+    //     this.run = () => {
+    //         cursor.node.style.left = this.x1 + "px";
+    //         cursor.node.style.top = this.y1 + "px";
+    //         cursor.node.classList.add("moving");
+    //         cursor.node.style["margin-left"] = this.x2-this.x1 + "px";
+    //         cursor.node.style["margin-top"] = this.y2-this.y1 + "px";
+    //         window.setTimeout(() => {
+    //             cursor.node.classList.remove("moving");
+    //         }, this.duration)
+    //     }
+    // }
+
+    cursor = {
+        node: document.querySelector(".cursor"),
+        show: function() {
+            this.node.classList.add("shown")
+        },
+        hide: function() {
+            this.node.classList.remove("shown")
+        }
+    };
+
     creative = {
         wasStarted: false,
         startButton: document.querySelector(".start"),
@@ -127,6 +156,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     creative.startButton.addEventListener("click", function() {
         creative.wasStarted = true;
+        cursor.show();
         creative.startButton.classList.add("hidden");
     });
 
