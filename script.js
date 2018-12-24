@@ -1,6 +1,10 @@
 var creative;
 var clickTag = "https://auto.ru";
 
+function redirecting() {
+    window.open(clickTag);
+}
+
 document.addEventListener("DOMContentLoaded", function() {
 
     'use strict';
@@ -116,9 +120,8 @@ document.addEventListener("DOMContentLoaded", function() {
             canvas.remove();
             this.downloadButton.classList.add("shown");
             this.label.classList.add("shown");
-            container.addEventListener("click", function() {
-                window.open(clickTag);
-            });
+            container.addEventListener("click", redirecting);
+            creative.downloadButton.addEventListener("click", redirecting);
         }
     };
 

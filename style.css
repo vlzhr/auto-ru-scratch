@@ -35,21 +35,24 @@ button {
     font-size: 20px;
     box-shadow: rgba(40,40,40,0.2) 0 4px 4px;
     cursor: pointer;
-    background-color: #71B737;
     border: none;
     /*opacity: 0;*/
 }
 .start {
     background-color: #3E82D4;
 }
+.download {
+    background-color: #71B737;
+}
 .hidden {
     opacity: 0;
+    pointer-events: none;
 }
 
-.container .final-element {
+.final-element {
     opacity: 0;
 }
-.container .final-element.shown {
+.final-element.shown {
     opacity: 1;
 }
 
