@@ -1,5 +1,11 @@
 body {
-    padding: 20px 0;
+    padding: 0;
+    margin: 0;
+}
+
+body, html {
+    overflow-x: hidden;
+    overflow-y: auto;
 }
 
 main {
@@ -22,12 +28,13 @@ main {
 .container img {
     width: 480px;
 }
+
 button {
     transition: opacity .7s;
     position: absolute;
-    left: 100px;
+    left: 110px;
     bottom: 20px;
-    width: 280px;
+    width: 260px;
     box-sizing: border-box;
     color: white;
     padding: 12px;
@@ -36,8 +43,34 @@ button {
     box-shadow: rgba(40,40,40,0.2) 0 4px 4px;
     cursor: pointer;
     border: none;
-    /*opacity: 0;*/
 }
+
+@keyframes pulsation {
+    0% {
+        padding: 12px;
+        bottom: 20px;
+    }
+    50% {
+        padding: 20px;
+        bottom: 12px;
+    }
+}
+@-webkit-keyframes pulsation1 {
+    0% {
+        padding: 12px;
+        bottom: 20px;
+        width: 260px;
+        left: 110px;
+    }
+    50% {
+        padding: 16px;
+        bottom: 16px;
+        width: 280px;
+        left: 100px;
+    }
+}
+
+
 .start {
     background-color: #3E82D4;
 }
