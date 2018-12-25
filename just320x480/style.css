@@ -9,15 +9,16 @@ body, html {
 }
 
 main {
-    width: 480px;
-    height: 320px;
+    width: 320px;
+    height: 480px;
     position: absolute;
+    background-color: #F2EEF2;
 }
 
 .container {
     position: relative;
-    width: 480px;
-    height: 320px;
+    width: 320px;
+    height: 480px;
     margin: 0 auto;
     -webkit-user-select: none;
     -moz-user-select: none;
@@ -25,15 +26,12 @@ main {
     -o-user-select: none;
     user-select: none;
 }
-.container img {
-    width: 480px;
-}
 
 button {
     transition: opacity .7s;
     position: absolute;
-    left: 110px;
-    bottom: 20px;
+    left: 30px;
+    bottom: 30px;
     width: 260px;
     box-sizing: border-box;
     color: white;
@@ -60,15 +58,15 @@ button {
 @-webkit-keyframes pulsation1 {
     0% {
         padding: 12px;
-        bottom: 20px;
+        bottom: 30px;
         width: 260px;
-        left: 110px;
+        left: 30px;
     }
     50% {
         padding: 16px;
-        bottom: 16px;
+        bottom: 26px;
         width: 280px;
-        left: 100px;
+        left: 20px;
     }
 }
 
@@ -95,16 +93,17 @@ button {
     line-height: 1;
     font-family: 'Noto Sans', sans-serif;
     color: white;
-    font-size: 30px;
+    font-size: 28px;
     font-weight: 500;
     position: absolute;
-    top: 14px;
-    width: 380px;
-    left: 50px;
+    top: 74px;
+    width: 100%;
+    left: 0;
     text-align: center;
 }
 
 .canvas {
+    transition: opacity 4s;
     position: absolute;
     top: 0;
 }
@@ -136,4 +135,18 @@ button {
         margin-left: 0px;
     }
 }
+
+
+.container img {
+    display: block;
+    position: absolute;
+    width: 320px;
+    top: 0px;
+    height: 439px;
+}
+
+.overlayer {
+    transition: opacity 2s;
+}
+
 
