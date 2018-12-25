@@ -152,4 +152,14 @@ button {
     transition: opacity 2s;
 }
 
+.gradienter {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 70px;
+    background: linear-gradient(to bottom, rgba(255,255,255,0.1) 0%, #F2EEF2 40%, #F2EEF2 100%);
+}
+
+
 
