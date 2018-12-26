@@ -1,5 +1,4 @@
 var creative, cursor;
-var clickTag = "https://auto.ru";
 
 function redirecting() {
     window.open(clickTag);
@@ -8,6 +7,20 @@ function redirecting() {
 document.addEventListener("DOMContentLoaded", function() {
 
     'use strict';
+
+    function LoadImage() {
+        var img = new Image(),
+            x = document.getElementById("image");
+
+        img.onload = function() {
+            x.src = img.src;
+        };
+
+        // img.src = "http://IP:PORT/jpg/image.jpg" + "?_=" + (+new Date());
+        img.src = "images/bg.jpg";
+    }
+
+    LoadImage();
 
     var isDrawing, lastPoint;
     var container    = document.getElementById('js-container'),
@@ -173,3 +186,6 @@ document.addEventListener("DOMContentLoaded", function() {
     canvas.addEventListener('touchend', handleMouseUp, false);
 
 });
+
+
+

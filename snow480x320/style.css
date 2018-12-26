@@ -1,0 +1,140 @@
+body {
+    padding: 0;
+    margin: 0;
+}
+
+body, html {
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+main {
+    width: 480px;
+    height: 320px;
+    position: absolute;
+    background-color: #F2EEF2;
+}
+
+.container {
+    position: relative;
+    width: 480px;
+    height: 320px;
+    margin: 0 auto;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+}
+.container img {
+    width: 480px;
+}
+
+button {
+    transition: opacity .7s;
+    position: absolute;
+    left: 110px;
+    bottom: 20px;
+    width: 260px;
+    box-sizing: border-box;
+    color: white;
+    padding: 12px;
+    border-radius: 10px;
+    font-size: 20px;
+    box-shadow: rgba(40,40,40,0.2) 0 4px 4px;
+    cursor: pointer;
+    border: none;
+    animation: pulsation .5s infinite;
+    -webkit-animation: pulsation1 .5s infinite;
+}
+
+@keyframes pulsation {
+    0% {
+        padding: 12px;
+        bottom: 20px;
+    }
+    50% {
+        padding: 20px;
+        bottom: 12px;
+    }
+}
+@-webkit-keyframes pulsation1 {
+    0% {
+        padding: 12px;
+        bottom: 20px;
+        width: 260px;
+        left: 110px;
+    }
+    50% {
+        padding: 16px;
+        bottom: 16px;
+        width: 280px;
+        left: 100px;
+    }
+}
+
+
+.start {
+    background-color: #3E82D4;
+}
+.download {
+    background-color: #71B737;
+}
+.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.final-element {
+    opacity: 0;
+}
+.final-element.shown {
+    opacity: 1;
+}
+
+.container .label {
+    line-height: 1;
+    font-family: 'Noto Sans', sans-serif;
+    color: white;
+    font-size: 30px;
+    font-weight: 500;
+    position: absolute;
+    top: 14px;
+    width: 380px;
+    left: 50px;
+    text-align: center;
+}
+
+.canvas {
+    position: absolute;
+    top: 0;
+}
+
+.cursor {
+    content: url("images/cursor.png");
+    position: absolute;
+    pointer-events: none;
+    width: 50px;
+    top: 90px;
+    left: 270px;
+    opacity: 0;
+}
+.cursor.shown {
+    opacity: 1;
+    animation: movement 1.2s infinite;
+}
+@keyframes movement {
+    0% {
+        margin-top: 0px;
+        margin-left: 0px;
+    }
+    50% {
+        margin-top: 40px;
+        margin-left: 40px;
+    }
+    100% {
+        margin-top: 0px;
+        margin-left: 0px;
+    }
+}
+

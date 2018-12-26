@@ -1,13 +1,26 @@
 var creative, cursor;
-var clickTag = "https://auto.ru";
 
 function redirecting() {
-    window.open(clickTag);
+    window.open(window.clickTag);
 }
 
 document.addEventListener("DOMContentLoaded", function() {
 
     'use strict';
+
+    function LoadImage() {
+        var img = new Image(),
+            x = document.getElementById("image");
+
+        img.onload = function() {
+            x.src = img.src;
+        };
+
+        // img.src = "http://IP:PORT/jpg/image.jpg" + "?_=" + (+new Date());
+        img.src = "images/bg.jpg";
+    }
+
+    LoadImage();
 
     var isDrawing, lastPoint;
     var container    = document.getElementById('js-container'),
@@ -158,6 +171,7 @@ document.addEventListener("DOMContentLoaded", function() {
         creative.wasStarted = true;
         cursor.show();
         creative.startButton.classList.add("hidden");
+
     });
 
     canvas.addEventListener('mousedown', handleMouseDown, false);
