@@ -1,4 +1,5 @@
 var creative, cursor;
+var finish = false;
 
 function redirecting() {
     window.open(window.clickTag);
@@ -16,7 +17,8 @@ document.addEventListener("DOMContentLoaded", function() {
             x.src = img.src;
         };
 
-        // img.src = "http://IP:PORT/jpg/image.jpg" + "?_=" + (+new Date());
+
+        img.crossOrigin = "Anonymous";
         img.src = "images/bg.jpg";
     }
 
@@ -31,6 +33,8 @@ document.addEventListener("DOMContentLoaded", function() {
         image        = new Image(),
         brush        = new Image();
 
+
+    image.crossOrigin = "Anonymous";
     image.src = "images/snow.png";
     image.onload = function() {
         ctx.drawImage(image, 0, 0);
@@ -159,11 +163,12 @@ document.addEventListener("DOMContentLoaded", function() {
         downloadButton: document.querySelector(".download"),
         label: document.querySelector(".label"),
         end: function() {
+            finish = true;
             canvas.remove();
             this.downloadButton.classList.add("shown");
             this.label.classList.add("shown");
-            container.addEventListener("click", redirecting);
-            creative.downloadButton.addEventListener("click", redirecting);
+            // container.addEventListener("click", redirecting);
+            // creative.downloadButton.addEventListener("click", redirecting);
         }
     };
 
@@ -180,5 +185,13 @@ document.addEventListener("DOMContentLoaded", function() {
     canvas.addEventListener('touchmove', handleMouseMove, false);
     canvas.addEventListener('mouseup', handleMouseUp, false);
     canvas.addEventListener('touchend', handleMouseUp, false);
+
+
+    document.querySelector("main").addEventListener("click", function(event) {
+        if (!finish) {
+            event.stopPropagation();
+            event.preventDefault();
+        }
+    })
 
 });
