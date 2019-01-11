@@ -108,6 +108,7 @@ button {
     position: absolute;
     top: 0;
     margin-top: 20px;
+    margin-left: -27px;
 }
 
 .cursor {
