@@ -115,9 +115,9 @@ button {
     content: url("images/cursor.png");
     position: absolute;
     pointer-events: none;
-    width: 30px;
-    top: 60px;
-    left: 170px;
+    width: 60px;
+    top: 40px;
+    left: 160px;
     opacity: 0;
 }
 .cursor.shown {
